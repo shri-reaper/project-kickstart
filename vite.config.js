@@ -5,13 +5,14 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
+    outDir: 'dist',        // Vercel default output folder for static sites
     rollupOptions: {
-      input: './index.html', // make sure index.html is at the root
-    },
+      input: './index.html' // entry point for Vite
+    }
   },
   resolve: {
     alias: {
-      '@': '/src', // optional, for cleaner imports
-    },
-  },
+      '@': '/src'
+    }
+  }
 });
